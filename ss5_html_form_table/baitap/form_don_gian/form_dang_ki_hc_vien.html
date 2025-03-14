@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG KÝ HỌC VIÊN</title>
+    <style>
+        label {
+            padding-top: 10px;
+            color: blue;
+            margin-left: 10px;
+        }
+
+        input,
+        select {
+            margin-left: 50px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post" style="background-color: rgb(248, 241, 144); width: 30%;">
+        <h3 style="color: blue; background-color: aquamarine;">ĐĂNG KÍ HỌC VIÊN</h3>
+        <label for="hovaten">Họ và tên</label>
+        <input type="text" name="hovaten" style="margin-left: 53px;"><br>
+        <label for="ngaysinh" style="margin-top:15px ;">Ngày sinh</label>
+        <input type="date" name="ngaysinh"><br>
+        <label>Giới tính</label>
+        <input type="radio" name="gioi_tinh" style="margin-left: 55px;">
+        <label>Nam</label>
+        <input type="radio" name="gioi_tinh">
+        <label>Nữ</label><br>
+        <label>Địa chỉ</label>
+        <textarea name="address" cols="30" rows="5" style="margin-left: 69px;"></textarea><br>
+        <label>Lớp</label>
+        <select name="lop" style="margin-left: 90px;">
+            <option value="JV101">JV101</option>
+            <option value="JV102">JV102</option>
+            <option value="JV103">JV103</option>
+        </select><br>
+        <label >Email</label>
+        <input type="email" name="email" style="margin-left: 78px;"><br>
+        <label>Điện thoại</label>
+        <input type="number" name="number">
+        <br>
+        <input type="submit" value="Đăng ký" style="margin-left: 120px;">
+
+        <input type="reset" value="Nhập lại" style="margin-right: 30px;">
+    </form>
+</body>
+
+</html>
