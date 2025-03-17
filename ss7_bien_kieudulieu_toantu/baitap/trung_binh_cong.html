@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung bình cộng</title>
+</head>
+
+<body>
+    <script>
+        // prompt sẽ trả giá trị về dạng chuỗi
+        // dùng parseFloat để chuyển chuỗi thành giá trị số
+        let vatly = parseFloat(prompt("Nhập điểm vật lý "));
+        let hoa = parseFloat(prompt("Nhập điểm hóa học "));
+        let sinh = parseFloat(prompt("Nhập điểm sinh "));
+        let tbc;
+        tbc = (vatly + hoa + sinh) / 3;
+        alert("Điểm trung bình cộng Lý, Hóa, Sinh là: " + tbc);
+    </script>
+</body>
+
+</html>

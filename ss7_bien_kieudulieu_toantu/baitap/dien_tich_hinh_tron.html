@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình tròn</title>
+</head>
+<body>
+    <input type="number"  id="bankinh">
+    <button onclick="Shinhtron()" >Tính</button>
+    <p id="result">Diện tích là:</p>
+
+    <script>
+        function Shinhtron(){
+            let bankinh = document.getElementById("bankinh").value;
+            let S;
+            S = Math.PI*Math.sqrt(bankinh);
+            document.getElementById("result").innerHTML= "Diện tích là: " + S;
+        }
+    </script>
+</body>
+</html>

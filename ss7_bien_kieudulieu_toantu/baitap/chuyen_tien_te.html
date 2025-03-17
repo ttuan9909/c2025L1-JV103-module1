@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+
+<body>
+    <div style="display: flex; ">
+        <div style="margin-left: 50px;">
+            <Label>Amount</Label>
+            <br>
+            <input type="number" id="so">
+        </div>
+        <div style="margin-left: 50px;">
+            <label>From Currency</label>
+            <br>
+            <select id="chon1">
+                <option value="vietnam">VietNam</option>
+                <option value="usd">USD</option>
+            </select>
+        </div>
+        <div style="margin-left: 50px;">
+            <label>To Currency</label>
+            <br>
+            <select id="chon2">
+                <option value="vietnam">VietNam</option>
+                <option value="usd">USD</option>
+            </select>
+        </div>
+        <button onclick="chuyendoitien()" style="margin-left: 50px;">Convert</button>
+    </div>
+    <h2 id="ketqua" style="margin-left: 50px; margin-top: 20px;"></h2>
+<script>
+    function chuyendoitien(){
+        
+        let amount = document.getElementById("so").value;
+        let from = document.getElementById("chon1").value;
+        let to = document.getElementById("chon2").value;
+        let result;
+        if (from === "usd" && to === "vietnam") {
+            result = "Result: " + (amount * 23000) + " Đ";
+        } else if (from === "vietnam" && to === "usd") {
+            result = "Result: "+ (amount / 23000) + " $"
+        } else if (from === "vietnam") {
+            result = "Result: " + amount + " Đ"
+        } else {
+             result = "Result: " + amount + "$"
+        }
+        document.getElementById("ketqua").innerHTML= result;
+    }
+    
+</script>
+</body>
+
+</html>

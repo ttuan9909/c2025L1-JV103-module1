@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chu vi hình tròn</title>
+</head>
+<body>
+    <input type="number"  id="bankinh">
+    <button onclick="ChuViHinhTron()" >Tính</button>
+    <p id="result">Chu vi là:</p>
+
+    <script>
+        function ChuViHinhTron(){
+            let bankinh = document.getElementById("bankinh").value;
+            let c;
+            c = Math.PI*bankinh*2;
+            document.getElementById("result").innerHTML= "Chu vi là: " + c;
+        }
+    </script>
+</body>
+</html>
