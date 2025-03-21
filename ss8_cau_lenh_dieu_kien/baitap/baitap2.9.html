@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra cạnh tam giác</title>
+</head>
+
+<body>
+
+    <h2>Kiểm tra cạnh tam giác</h2>
+    <label for="a">Nhập a:</label>
+    <input type="number" id="a">
+    <br>
+    <label for="b">Nhập b:</label>
+    <input type="number" id="b">
+    <br>
+    <label for="c">Nhập c:</label>
+    <input type="number" id="c">
+    <button onclick="kiemTraCanhTamGiac()">Chuyển đổi</button>
+    <p id="result"></p>
+
+
+    <script>
+        function kiemTraCanhTamGiac() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let result;
+            // let cong;
+            // if (a > 0 && b > 0 && c > 0) {
+            //     cong = a + b;
+            //     if (cong > c) {
+            //         cong = b + c;
+            //         if (cong > a) {
+            //             cong = a + c;
+            //             if (cong > b) {
+            //                 result = "a, b, c là ba cạnh của một tam giác"
+            //             } else {
+            //                 result = "a, b, c không phải ba cạnh của một tam giác"
+            //             }
+            //         } else {
+            //             result = "a, b, c không phải ba cạnh của một tam giác"
+            //         }
+            //     } else {
+            //         result = "a, b, c không phải ba cạnh của một tam giác"
+            //     }
+            // } else {
+            //     result = "a, b, c không phải ba cạnh của một tam giác"
+            // }
+
+            if (a > 0 && b > 0 && c > 0) {
+                if (a + b > c && b + c > a && a + c > b) {
+                    result = "a, b, c là ba cạnh của một tam giác"
+                } else {
+                    result = "a, b, c không phải ba cạnh của một tam giác"
+                }
+            } else {
+                result = "a, b, c không phải ba cạnh của một tam giác"
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc hai</title>
+</head>
+
+<body>
+
+    <h2>Giải phương trình bậc hai</h2>
+    <label for="a">Nhập a:</label>
+    <input type="number" id="a">
+    <br>
+    <label for="b">Nhập b:</label>
+    <input type="number" id="b">
+    <br>
+    <label for="c">Nhập c:</label>
+    <input type="number" id="c">
+    <button onclick="giaiPhuongTrinhBacHai()">Chuyển đổi</button>
+    <p id="result"></p>
+
+
+    <script>
+        function giaiPhuongTrinhBacHai() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let  x1, x2;
+            let result;
+            let delta = b*b - 4*a*c
+            if (delta < 0) {
+                result = "Phương trình vô nghiệm"
+            } else if (delta === 0) {
+                x1 = x2 = -b/(2*a);
+                result = "Phương trình vô nghiệm kép: x1 = x2 = " + x1;
+            } else {
+                x1 = (-b + Math.sqrt(delta))/ (2*a);
+                x2 = (-b - Math.sqrt(delta))/ (2*a);
+                result = "Phương trình có 2 nghiệm phân biệt là: " + "x1 = " + x1 + " " + "x2 = " + x2 ;
+                
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

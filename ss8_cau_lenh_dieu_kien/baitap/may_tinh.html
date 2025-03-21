@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+    <style>
+        .input1{
+            width: 271px;
+        }
+         .button1-container {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 10px;
+            justify-content:left;
+            margin-top: 10px;
+        }
+
+        .button1 {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            background-color: lightgray;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Máy Tính</h2>
+    <input class="input1"  type="text" id="input" readonly>
+    <div class="button1-container">
+        <button onclick="nhap('7')">7</button>
+        <button onclick="nhap('8')">8</button>
+        <button onclick="nhap('9')">9</button>
+        <button onclick="nhap('/')">÷</button>
+       
+        <button onclick="nhap('4')">4</button>
+        <button onclick="nhap('5')">5</button>
+        <button onclick="nhap('6')">6</button>
+        <button onclick="nhap('*')">×</button>
+          
+        <button onclick="nhap('1')">1</button>
+        <button onclick="nhap('2')">2</button>
+        <button onclick="nhap('3')">3</button>
+        <button onclick="nhap('-')">-</button>
+        
+        <button onclick="clearInput()" class="clear">C</button>
+        <button onclick="nhap('0')">0</button>
+        <button onclick="tinhToan()" class="equal">=</button>
+        <button onclick="nhap('+')">+</button>
+    </div>
+    <script>
+        function nhap(value) {
+             document.getElementById("input").value += value;
+        }
+        function tinhToan() {
+            let input = document.getElementById("input");
+            try {
+                input.value = eval(input.value);
+            } catch (error) {
+                input.value = "Lỗi!";
+            }
+        }
+        function clearInput() {
+            document.getElementById("input").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Lãi Ngân Hàng</title>
+</head>
+<body>
+
+    <h2>Tính Lãi Ngân Hàng (Lãi Mẹ Đẻ Lãi Con)</h2>
+    
+    <label for="tiengoc">Số tiền ban đầu (VNĐ):</label>
+    <input type="number" id="tiengoc">
+    <br>
+    
+    <label for="sothang">Số tháng gửi:</label>
+    <input type="number" id="sothang">
+    <br>
+    
+    <label for="laisuat">Lãi suất hàng tháng (%):</label>
+    <input type="number" id="laisuat">
+    <br>
+
+    <button onclick="tinhLai()">Tính Lãi</button>
+
+    <h3>Kết quả:</h3>
+    <p id="result"></p>
+
+    <script>
+        function tinhLai() {
+            let tienGoc = parseFloat(document.getElementById("tiengoc").value);
+            let soThang = parseInt(document.getElementById("sothang").value);
+            let laiSuat = parseFloat(document.getElementById("laisuat").value)/100  ; 
+            let tongTien;
+            let result;
+
+           
+             tongTien = tienGoc * Math.pow(1 + laiSuat, soThang); // Công thức lãi kép
+                result = ` Tổng số tiền sau ${soThang} tháng là: <strong>${tongTien.toLocaleString()} VNĐ</strong>`;
+            
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

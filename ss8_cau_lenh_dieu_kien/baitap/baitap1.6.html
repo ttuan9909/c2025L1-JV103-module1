@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hoa hồng theo doanh thu tháng</title>
+</head>
+<body>
+    <h2>Nhập số tiền</h2>
+    <br>
+    <input id="so" type="number" placeholder="VNĐ">
+    <button onclick="tinhHoaHong()">Tính</button>
+    <p id="result"></p>
+
+    <script>
+        function tinhHoaHong() {
+            let num = document.getElementById("so").value;
+            let result;
+            if (num > 5000000) {
+                result = num*10/100 ;
+            } else if (num >= 2000000) {
+                result = num*6/100;
+            } else {
+                result = num*3/100;
+            }
+
+            document.getElementById("result").innerHTML = "Số tiền hoa hồng là:" + result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra tuổi</title>
+</head>
+<body>
+    <h2>Nhập tuổi</h2>
+    <br>
+    <input id="tuoi" type="number">
+    <button onclick="kiemTraTuoi()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function kiemTraTuoi(){
+            let tuoi = document.getElementById("tuoi").value;
+            let result;
+            if(tuoi > 15 && tuoi < 18) {
+                result = "Đủ điều kiện vào lớp 10";
+            }else{
+                result = "Không đủ điều kiện vào lớp 10";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại học lực</title>
+</head>
+
+<body>
+    <h2>Nhập số điểm</h2>
+    <br>
+    <input id="test" type="number" placeholder="Điểm bài kiểm tra">
+    <input id="midterm" type="number" placeholder="Điểm thi giữa kỳ">
+    <input id="final" type="number" placeholder="Điểm thi cuối kỳ">
+    <button onclick="xepLoaiHocLuc()">Xếp loại</button>
+    <p id="result"></p>
+
+    <script>
+        function xepLoaiHocLuc() {
+            let test = parseFloat(document.getElementById("test").value);
+            let midterm = parseFloat(document.getElementById("midterm").value);
+            let final = parseFloat(document.getElementById("final").value);
+            let result = +((test * 0.2) + (midterm * 0.3) + (final * 0.5));
+            if (result >= 8) {
+                result = "Xếp loại Giỏi";
+            } else if (result >= 6.5) {
+                result = "Xếp loại Khá";
+            } else if (result >= 5) {
+                result = "Xếp loại Trung bình"; 
+            } else {
+                result = "Xếp loại Yếu";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

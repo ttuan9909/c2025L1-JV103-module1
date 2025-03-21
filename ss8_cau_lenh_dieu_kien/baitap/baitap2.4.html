@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+    <label for="dai">Nhập chiều dài(cm):</label>
+    <input type="number" id="dai">
+    <label for="rong">Nhập chiều rộng(cm):</label>
+    <input type="number" id="rong">
+    <button onclick="dienTichHinhChuNhat()">Chuyển đổi</button>
+    <p id="result"></p>
+
+    <script>
+        function dienTichHinhChuNhat() {
+            let dai = document.getElementById("dai").value; 
+            let rong = document.getElementById("rong").value;
+            let dienTich = dai*rong; // 
+            document.getElementById("result").innerHTML = "Diện tích hình chữ nhật là:  " + dienTich + "cm2";
+        }
+    </script>
+</body>
+</html>

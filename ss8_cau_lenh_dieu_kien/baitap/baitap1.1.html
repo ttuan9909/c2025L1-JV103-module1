@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra hai số</title>
+</head>
+
+<body>
+
+    <input type="number" id="sothunhat" placeholder="Nhập số thứ nhất">
+    <input type="number" id="sothuhai" placeholder="Nhập số thứ hai">
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTra() {
+            let num1 = document.getElementById("sothunhat").value;
+            let num2 = document.getElementById("sothuhai").value;
+            let result;
+            if (num1 % num2 === 0){
+                result = "Số thứ nhất chia hết cho số thứ hai";
+            } else {
+                result = "Số thứ nhất không chia hết cho số thứ hai";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+    </script>
+</body>
+
+</html>

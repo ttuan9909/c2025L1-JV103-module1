@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+    <h2>Nhập số phút gọi</h2>
+    <br>
+    <input id="so" type="number" placeholder="Phút">
+    <button onclick="tinhGiaCuoc()">Tính</button>
+    <p id="result"></p>
+
+    <script>
+        function tinhGiaCuoc() {
+            let phut = document.getElementById("so").value;
+            let cuocPhi;
+            let phiCoDinh = 25000;
+            if (phut > 200) {
+                cuocPhi = (phut-200)*200 + 150*400 + 50*600 ;
+            } else if (phut > 50) {
+                cuocPhi = (phut - 50 )*400 + 50*600;
+            } else {
+                cuocPhi = phut*600;
+            }
+            tong = cuocPhi + phiCoDinh;
+            document.getElementById("result").innerHTML = "Số tiền cước phí là:" + tong;
+        }
+    </script>
+</body>
+</html>

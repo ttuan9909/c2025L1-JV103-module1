@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi mét sang feet</title>
+</head>
+<body>
+    <label for="met">Nhập mét:</label>
+    <input type="number" id="met">
+    <button onclick="doiMetSangFeet()">Chuyển đổi</button>
+    <p id="result"></p>
+
+    <script>
+        function doiMetSangFeet() {
+            let met = document.getElementById("met").value; // 
+            let ft = met*3.2808; // 
+            document.getElementById("result").innerHTML = "Feet là " + ft + "ft";
+        }
+    </script>
+</body>
+</html>

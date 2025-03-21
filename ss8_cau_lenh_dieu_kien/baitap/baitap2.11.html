@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế cá nhân</title>
+</head>
+
+<body>
+    <h2>Tính thuế cá nhân</h2>
+    <br>
+    <input id="thunhap" type="number" placeholder="Nhập thu nhập của bạn">
+    <button onclick="tinhThue()">Tính</button>
+    <p id="result"></p>
+
+    <script>
+        function tinhThue() {
+            let thuNhap = parseFloat(document.getElementById("thunhap").value);
+            let thue;    
+            if (thuNhap > 80000000) {
+               thue = thuNhap*35/100 - 9850000 ;
+            } else if (thuNhap > 52000000) {
+                thue = thuNhap*30/100 - 5850000 ;
+            } else if (thuNhap > 32000000) {
+                thue = thuNhap*25/100 - 3250000 ;
+            } else if (thuNhap > 18000000) {
+                thue = thuNhap*20/100 - 1650000 ;
+            } else if (thuNhap > 10000000) {
+                thue = thuNhap*15/100 - 750000 ;
+            } else if (thuNhap > 5000000) {
+                thue = thuNhap*10/100 - 250000 ;
+            } else {
+                thue = thuNhap*5/100;
+            }
+            document.getElementById("result").innerHTML = "Thuế thu nhập của bạn là: " + thue  +"VNĐ";
+        }
+    </script>
+</body>
+
+</html>

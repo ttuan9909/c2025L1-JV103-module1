@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số</title>
+</head>
+
+<body>
+    <h2>Nhập số</h2>
+    <br>
+    <input id="so1" type="number" placeholder="Nhập số thứ nhất">
+    <input id="so2" type="number" placeholder="Nhập số thứ hai">
+    <input id="so3" type="number" placeholder="Nhập số thứ ba">
+    <button onclick="soLonNhat()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function soLonNhat() {
+            let num1 = document.getElementById("so1").value;
+            let num2 = document.getElementById("so2").value;
+            let num3 = document.getElementById("so3").value;
+            let result;
+            if (num1 > num2) {
+                if (num1 > num3) {
+                    result = "Số thứ nhất là số lớn nhất";
+                } else {
+                    result = "Số thứ ba là số lớn nhất";
+                }
+            } else {
+                if (num2 > num3) {
+                    result = "Số thứ hai là số lớn nhất";
+                } else {
+                    result = "Số thứ ba là số lớn nhất";
+                }
+            }
+
+                document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

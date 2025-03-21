@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+    <h2>Tính diện tích tam giác vuông</h2>
+    <label for="canha">Nhập chiều dài cạnh góc vuông thứ nhất(cm):</label>
+    <input type="number" id="canha">
+    <br>
+    <label for="canhb">Nhập chiều dài cạnh góc vuông thứ nhất(cm):</label>
+    <input type="number" id="canhb">
+    <button onclick="dienTichTamGiacVuong()">Chuyển đổi</button>
+    <p id="result"></p>
+
+    <script>
+        function dienTichTamGiacVuong() {
+            let canha = document.getElementById("canha").value; 
+            let canhb = document.getElementById("canhb").value;
+            let dienTich = (canha * canhb)/2; // 
+            document.getElementById("result").innerHTML = "Diện tích tam giác vuông là:  " + dienTich + "cm2";
+        }
+    </script>
+</body>
+</html>
