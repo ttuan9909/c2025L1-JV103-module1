@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng 20 số Fibonacci đầu tiên</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+        function sumFibonacci() {
+            let a = 0, b = 1, temp;
+            let result =  a + b;
+
+            for (let i = 2; i < 20; i++) {
+                temp = a + b;
+                result += temp;
+                a = b;
+                b = temp;
+            }
+
+            document.getElementById("result").innerHTML ="Tổng 20 số fibonacci đầu tiên là "+ result;
+        }
+
+        sumFibonacci(20);
+    </script>
+
+</body>
+</html>

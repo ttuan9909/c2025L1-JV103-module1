@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+        function timSoFibonacciChiaHet5DauTien() {
+            let a = 0, b = 1, cong;
+            
+            for (let i = 2; ; i++) { 
+                cong = a + b;
+                
+                if (cong % 5 === 0) {
+                    document.getElementById("result").innerHTML = 
+                        "Số Fibonacci đầu tiên chia hết cho 5 là: " + cong;
+                    break; 
+                }
+
+                a = b;
+                b = cong;
+            }
+        }
+
+        timSoFibonacciChiaHet5DauTien();
+    </script>
+
+</body>
+</html>

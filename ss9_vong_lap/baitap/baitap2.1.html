@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+
+    <script>
+        function dayFibonacci() {
+            let a = 0, b = 1, cong;
+            let count = 0; 
+
+            while (count < 20) { 
+                document.write(a + ", "); 
+
+                cong = a + b; 
+                a = b;        
+                b = cong;     
+
+                count++; 
+            }
+        }
+
+        dayFibonacci();
+    </script>
+
+</body>
+</html>

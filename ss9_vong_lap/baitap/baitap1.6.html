@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng số chia hết cho 7</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+        function tong30SoDauTienChiaHet7() {
+            let sum = 0;
+            let count = 0;
+
+            for (let i = 7; count < 30; i += 7) { 
+                sum += i;
+                count++;
+            }
+
+            document.getElementById("result").innerHTML = 
+                "Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum;
+        }
+
+        tong30SoDauTienChiaHet7();
+    </script>
+
+</body>
+</html>
