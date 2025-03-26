@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+
+<body>
+    <button onclick="doanso()">Bắt đầu</button>
+    <script>
+        function doanso() {
+            let number = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?")
+            let numberRandom = Math.floor(Math.random() * number);
+            let numberCheck = +prompt("Nhập số bạn đoán");
+
+            while (numberCheck !== numberRandom) {
+                if (numberCheck < numberRandom) {
+                    alert("Số bạn đoán bé hơn");
+                } else {
+                    alert("Số bạn đoán lớn hơn")
+                }
+                numberCheck = +prompt("Nhập số bạn đoán");
+            }
+
+            document.write("Bạn đã đoán đúng số. Chúc mừng bạn!")
+        }
+
+
+    </script>
+
+</body>
+
+</html>

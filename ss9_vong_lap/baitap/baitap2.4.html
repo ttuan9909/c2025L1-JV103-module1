@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình chữ nhật</title>
+</head>
+<body>
+    <!-- <script>
+        function veHinhChuNhat(){
+            document.write("<pre>");
+            let cao = 7, rong = 21, i, j;
+            for(i=0;i<cao;i++){
+                for(j=0;j<rong;j++){
+                    document.write("*");
+                }
+                document.write("\n");
+            }
+        }
+        document.write("<pre>");
+        veHinhChuNhat();
+    </script> -->
+    <script>
+        function veHinhChuNhat(){
+            document.write("<pre>");
+            let cao = 7, rong = 21, i, j;
+            for(i=0;i<cao;i++){
+                for(j=0;j<rong;j++){
+                    if (i === 0 || i === cao - 1 || j === 0 || j === rong - 1) {
+                document.write("*");
+            } else {
+                document.write(" ");
+            }
+                }
+                document.write("\n");
+            }
+        }
+        document.write("<pre>");
+        veHinhChuNhat();
+    </script>
+</body>
+</html>

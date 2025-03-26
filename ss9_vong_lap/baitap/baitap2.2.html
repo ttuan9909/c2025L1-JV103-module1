@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa</title>
+</head>
+
+<body>
+    <h3>Tính giai thừa</h3>
+    <input type="number"  id="so" placeholder="Nhập số">
+    <button onclick="tinhGiaiThua()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function tinhGiaiThua(){
+            let so = document.getElementById("so").value;
+            result = 1;
+            for (i =1;i<=so;i++){
+                result *=i; 
+            }
+            document.getElementById("result").innerHTML = "Giai thừa của "+ so +" là " + result;
+        }
+    </script>
+</body>
+</html>

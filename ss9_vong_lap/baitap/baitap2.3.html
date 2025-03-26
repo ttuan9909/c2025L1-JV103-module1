@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình tam giác vuông</title>
+</head>
+<body>
+    <script>
+        // Hình tam giác vuông góc trái bên dưới
+        function veHinhTamGiacVuong1(){
+           document.write("<pre>");
+            let i, n = 5;
+            for(let i =0;i <= n;i++){
+                document.write("*".repeat(i)+ "\n");
+            }
+            document.write("</pre>");
+        }
+        veHinhTamGiacVuong1();
+    </script>
+
+    <script>
+        // Hình tam giác vuông góc trái bên dưới
+        function veHinhTamGiacVuong2(){
+            document.write("<pre>");
+                let i, n = 5;
+            for(let i = n;i > 0;i--){
+                document.write("*".repeat(i)+ "\n");
+            }
+            document.write("</pre>");
+        }
+        veHinhTamGiacVuong2();
+    </script>
+    <script>
+        // Hình tam giác vuông góc trái bên dưới
+        function veHinhTamGiacVuong3(){
+            document.write("<pre>");
+            let i, n = 5;
+            for(i =1;i <= n;i++){
+                document.write(" ".repeat(n-i)+"*".repeat(i)+ "\n");
+            }
+            document.write("</pre>");
+        }
+        veHinhTamGiacVuong3();
+    </script>
+    <script>
+        // Hình tam giác vuông góc trái bên dưới
+        function veHinhTamGiacVuong4(){
+            document.write("<pre>");
+            let i, n = 5;
+            for(let i =n;i > 0;i--){
+                document.write(" ".repeat(n-i)+"*".repeat(i)+ "\n");
+            }
+            document.write("</pre>");
+        }
+        veHinhTamGiacVuong4();
+    </script>
+</body>
+</html>

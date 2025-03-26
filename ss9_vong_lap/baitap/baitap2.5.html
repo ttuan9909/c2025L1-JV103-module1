@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+    <label>Số tiền gửi</label>
+    <input type="number" id="tienbandau">
+  
+    <label>Số tháng gửi</label>
+    <input type="number" id="thang">
+    
+    <label>Lãi suất</label>
+    <input type="number" id="laisuat">
+   
+    <button onclick="tinhLaiNganHang()">Tính</button>
+   
+    <p id="tiennhanduoc"></p>
+    <script>
+        function tinhLaiNganHang(){
+            let tienBanDau = parseFloat(document.getElementById("tienbandau").value)
+            let thang = parseFloat(document.getElementById("thang").value)
+            let laiSuat = parseFloat(document.getElementById("laisuat").value)
+            let tienNhanDuoc,i, tong;
+            for(i = 0;i<thang;i++){
+                tienNhanDuoc = tienBanDau * ((laiSuat/100)/thang)*thang; 
+                tong = tienBanDau + tienNhanDuoc;
+            }
+            document.getElementById("tiennhanduoc").innerHTML= "Tổng tiền là: " + tong.toLocaleString("vi-VN") + " VNĐ";
+        }
+    </script>
+</body>
+</html>

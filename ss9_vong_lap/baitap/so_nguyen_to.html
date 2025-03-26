@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số nguyên tố</title>
+</head>
+
+<body>
+    <input type="number" id="numbers">
+    <button onclick="inRaSoNguyenTo()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTraSoNguyenTo(n) {           
+            if (n < 2)
+                return false;
+            for (let i = 2; i * i <= n; i++) {
+                if (n % i === 0)
+                    return false; 
+            }
+            return true;
+        }
+
+        function inRaSoNguyenTo() {     
+            let n = 2;
+            let found = 0;
+            let result="";
+            numbers = parseFloat(document.getElementById("numbers").value);
+            while (found < numbers) {
+                if (kiemTraSoNguyenTo(n)) {
+                    result += n + " ";
+                    found++;
+                }
+                n++;
+            }
+            document.getElementById("result").innerHTML = numbers +" số nguyên tố đầu tiên:<br>" + result;
+        }
+        
+    </script>
+
+</body>
+
+</html>
