@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng số nguyên</title>
+</head>
+<body>
+    <script>
+        function mangSoNguyen(){
+            let mang = [12,15,18,1,2,4,6,7,20,99];
+            let count = 0;
+            for (let number of mang) {
+               
+                if (number > 10){
+                    count = count + 1;
+                }
+            }
+            document.writeln(count);
+        }
+        mangSoNguyen();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng số nguyên</title>
+</head>
+<body>
+    <script>
+        function timSoLonNhatTrongMang() {
+            let mang = [12, 15, 18, 1, 2, 4, 6, 7, 20, 99];
+            let trungbinh, tong = 0;
+            for (let num of mang) {
+                tong+= num;
+            }
+            trungbinh = tong/mang.length;
+           document.writeln(trungbinh);
+        }
+
+        timSoLonNhatTrongMang();
+    </script>
+</body>
+</html>

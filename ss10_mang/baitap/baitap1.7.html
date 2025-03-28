@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số trong mảng</title>
+</head>
+
+<body>
+    <input type="number" id="so">
+    <button onclick="timSoTrongMang()">Tìm</button>
+    <p id="result"></p>
+    <script>
+        function timSoTrongMang() {
+            let mang = [12, 15, 18, 1, 2, 4, 6, 7, 20, 99];
+            let num = Number(document.getElementById("so").value);
+            for (i = 0; i < mang.length; i++) {
+                if (mang[i] === num) {
+                    for (let j = i; j < mang.length - 1; j++) {
+                        mang[j] = mang[j + 1];
+                    }
+                    mang[mang.length - 1] = 0;
+                }
+
+            }
+
+            document.getElementById("result").innerHTML = "Mảng sau khi xóa: " + mang.join(", ");
+        }
+
+
+    </script>
+</body>
+
+</html>
