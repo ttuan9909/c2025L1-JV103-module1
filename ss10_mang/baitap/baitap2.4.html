@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số từ</title>
+</head>
+
+<body>
+    <script>
+        function demSoTu() {
+            let chuoi = prompt("Nhập một chuỗi: ");
+            let tu = chuoi.split(/\s+/); // Tìm tất cả từ (chữ cái, số) không tính dấu câu
+            document.write("Các từ là: " + tu + "<br>") ;
+            document.write("Số từ là: " + tu.length);
+
+        }
+        demSoTu();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu</title>
+</head>
+<body>
+    <h2>Từ Điển Anh - Việt</h2>
+    <input type="text" id="input" placeholder="Nhập từ tiếng Anh">
+    <button onclick="traCuu()">Tìm kiếm</button>
+    <p id="result"></p>
+
+    <script>
+        const english = ["hello", "goodbye", "thank you", "please", "apple", "dog", "cat", "computer"];
+        const vietnamese = ["xin chào", "tạm biệt", "cảm ơn", "làm ơn", "táo", "chó", "mèo", "máy tính"];
+
+        function traCuu() {
+            let input = document.getElementById("input").value.toLowerCase().trim();
+            let index = english.indexOf(input);
+            let result;
+
+            if (index !== -1) {
+                result = `Nghĩa của từ: ${vietnamese[index]}`;
+                document.getElementById("result").innerHTML = result;
+            } else {
+                result = "Không tìm thấy";
+                document.getElementById("result").innerHTML = result;
+                
+            }
+        }
+    </script>
+    
+</body>
+</html>

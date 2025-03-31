@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Textarea on Typing</title>
+</head>
+<body>
+    <h2>Gõ vào đây</h2>
+    <form name="form">
+        <textarea name="text" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form>
+    
+    <script>
+         
+            function typeTextarea(){
+                let mang =["T","ô","i"," ","đ","ẹ","p"," ","t","r","a","i"," ","h","ơ","n"," ","b","ạ","n"," ","đ","ú","n","g"," ","k","h","ô","n","g"," ","n","à","o"];
+                result="";
+                t = document.form.text.value;
+                j = t.length;
+                if(j > 0)
+                {
+                    for(let i=0; i<j; i++)
+                    {
+                        result = result + mang[i];
+                        if(i == mang.length)
+                        {
+                            document.form.text.value = "";
+                            result = "";
+                        }
+                    }
+                }
+                document.form.text.value = result;
+                
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mang 2 chiều</title>
+</head>
+
+<body>
+    <script>
+        function manHaiChieu() {
+
+            let a = [[11, 3, 5, 78], [77, 43, 54, 12], [7, 99, 687, 532], [111, 78, 681, 4], [7, 85, 90, 33]];
+
+            
+            for (let i in a) {             
+                document.write("row " + i + "<br>");  
+                for (let j in a[i]) {           
+                    document.write(" " + a[i][j]+ "<br>") ;
+                }
+            }
+        }
+        manHaiChieu();
+    </script>
+</body>
+
+</html>

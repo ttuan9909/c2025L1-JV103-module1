@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay thế kí tự</title>
+</head>
+<body>
+    <script>
+    function thayTheKyTu() {
+    let mang = ['a', '1', 'b', '5', '9', 'x', '-', '2', 'y', '7', 'z'];
+    
+
+    // Duyệt mảng bằng vòng lặp for và thay thế '-'
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] === '-') {
+            mang[i] = '_';
+        }
+    }
+    let ketQua = mang.join(""); // Chuyển mảng về chuỗi
+    document.write("Chuỗi sau khi thay thế: " + ketQua);
+}
+
+thayTheKyTu();
+    </script>
+    
+</body>
+</html>
