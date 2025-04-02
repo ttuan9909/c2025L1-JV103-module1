@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích hinh tròn</title>
+</head>
+<body>
+    <input type="text" name="" id="dodai" placeholder="Nhập bán kính hình tròn (m)">
+    <button onclick="tinhChuViHinhTron()">Tính chu vi</button>
+    <button onclick="tinhDienTichHinhTron()">Tính diện tích</button>
+    <br>
+    <p id="result"></p>
+    <script>
+        function tinhChuViHinhTron(){
+            r = document.getElementById("dodai").value;
+            let chuVi = 2 * r * Math.PI;
+            document.getElementById("result").innerHTML = "Chu vi hình tròn là: " + chuVi + " m";
+        }
+
+        function tinhDienTichHinhTron(){
+            r = document.getElementById("dodai").value;
+            let dienTich = r * r * Math.PI;
+            document.getElementById("result").innerHTML = "Diện tích hình tròn là: " + dienTich+ " m2";
+        }
+    </script>
+    
+</body>
+</html>

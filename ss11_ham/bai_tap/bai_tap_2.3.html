@@ -1,0 +1,24 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh giai thừa</title>
+</head>
+
+<body>
+    <script>
+        function tinhGiaiThua(n) {
+            if (n < 0) return "Không có giai thừa cho số âm";
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        alert(tinhGiaiThua(5));
+    </script>
+
+</body>
+
+</html>

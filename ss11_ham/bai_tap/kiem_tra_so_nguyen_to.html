@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+
+<body>
+    <input type="number" id="input">
+    <button onclick="isPrime()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function isPrime() {
+            let n = document.getElementById("input").value;
+
+            if (n < 2) {
+                document.getElementById("result").innerHTML = "Số không hợp lệ";
+                return;
+            }
+
+
+            for (let i = 2; i * i <= n; i++) {
+                if (n % i === 0) {
+                    document.getElementById("result").innerHTML = "Số " + n + " không phải là số nguyên tố";
+                    return;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Số " + n + " là số nguyên tố";
+        }
+
+    </script>
+</body>
+
+</html>

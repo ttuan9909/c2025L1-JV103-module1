@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function timChomSao(starName) {
+            let index = arr1.indexOf(starName); // Tìm vị trí của ngôi sao trong mảng
+            if (index !== -1) {
+                return arr2[index]; // Trả về tên chòm sao tương ứng
+            } else {
+                return "Không tìm thấy ngôi sao này trong danh sách.";
+            }
+        }
+        let input = prompt("Nhập tên ngôi sao (Ví dụ: Vega, Polaris, Altair):" );
+        if (input){
+            let result = timChomSao(input.trim()); // Loại bỏ khoảng trắng thừa
+            document.getElementById("result").innerHTML = result; // Hiển thị kết quả
+        } else {
+            document.getElementById("result").innerHTML = "Bạn chưa nhập tên ngôi sao.";
+        }
+
+    </script>
+
+</body>
+
+</html>
