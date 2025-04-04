@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí sản phẩm</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgb(53, 153, 53);
+            color: #f2f2f2;
+            border: 1px solid #faeeee;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lý sản phẩm</h2>
+
+    <input type="text" id="productName" placeholder="Nhập tên sản phẩm">
+    <button onclick="themSanPham()">Thêm</button>
+
+    <h2>Danh sách sản phẩm</h2>
+    <br>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." onkeyup="timKiemSanPham()">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+    </table>
+
+    <script>
+        let productList = ["Sản phẩm 1", "Sản phẩm 2", "Sản phẩm 3"];
+
+        function hienThiSanPham(productList){
+            let tableBody = document.getElementById("productList");
+            tableBody.innerHTML = "";
+
+            productList.forEach((product, index) =>{
+                let row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><span id="sp-${index}">${product}</span></td>
+                     <td>
+                        <button onclick="suaSanPham(${index})">Sửa</button>
+                        <button onclick="xoaSanPham(${index})">Xoá</button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            })
+
+        }
+
+        function themSanPham() {
+            let input = document.getElementById("productName");
+            let tenSanPham = input.value.trim();
+
+            if (tenSanPham) {
+                productList.push(tenSanPham);
+                input.value = "";  // xóa nội dung ô input sau khi thêm sản phẩm
+                hienThiSanPham(productList);
+            } else {
+                alert("Vui lòng nhập tên sản phẩm!");
+            }
+        }
+
+        function suaSanPham(index) {
+            let tenMoi = prompt("Nhập tên mới:", productList[index]);
+            if (tenMoi !== null && tenMoi.trim() !== "") {
+                productList[index] = tenMoi.trim();
+                hienThiSanPham(productList);
+            }
+        }
+
+        function xoaSanPham(index) {
+            if (confirm("Bạn có chắc chắn muốn xoá sản phẩm này?")) {
+                productList.splice(index, 1);
+                hienThiSanPham(productList); // Cập nhật lại danh sách
+            }
+        }
+
+        function timKiemSanPham() {
+            let keyword = document.getElementById("searchInput").value.toLowerCase();
+            let ketQua = productList.filter(sanPham => sanPham.toLowerCase().includes(keyword));
+            hienThiSanPham(ketQua);
+        }
+
+        hienThiSanPham(productList);
+    </script>
+
+    
+</body>
+</html>
