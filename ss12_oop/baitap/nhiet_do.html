@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhiệt độ</title>
+</head>
+<body>
+    <p id="doF"></p>
+    <p id="doK"></p>
+
+    <script>
+        class doC{
+            nhietDo;
+
+            constructor(nhietDo){
+                this.nhietDo = nhietDo;
+            }
+
+            getDoC(){
+                return this.nhietDo;
+            }
+            getDoF(){
+                return (this.nhietDo*9)/5 +32;
+            }
+            getDoK(){
+                return this.nhietDo + 273.15;
+            }
+            setDoC(nhietDo){
+                this.nhietDo = nhietDo;
+            }
+        }
+
+        let newdoC = new doC(37);
+        document.getElementById("doF").innerHTML = "Nhiệt độ F là: " + newdoC.getDoF();
+        document.getElementById("doK").innerHTML = "Nhiệt độ K là: " + newdoC.getDoK();
+
+    </script>
+    
+</body>
+</html>

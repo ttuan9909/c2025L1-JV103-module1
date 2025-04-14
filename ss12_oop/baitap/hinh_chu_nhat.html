@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hình chữ nhật</title>
+</head>
+
+<body>
+    <canvas id="DemoCanvas" width="500" height="200" style="border: 1px solid black;"></canvas> 
+    <p id="chuVi"></p>
+    <p id="dienTich"></p>
+    <script>
+        class Rectangle {
+            length;
+            width;
+
+            constructor(length,width){
+                this.length = length;
+                this.width = width;
+            }
+
+            getLength(){
+                return this.length;
+            }
+            getWidth(){
+                return this.width;
+            }
+            
+            setLength(length) {
+                this.length = length;
+            }
+            setWidth(width) {
+                this.width = width;
+            }
+
+            getArea() {
+                return this.length * this.width;
+            }
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+        }
+
+        let myRectangle = new Rectangle(50, 150);
+        let width = myRectangle.getWidth();
+        let length = myRectangle.getLength();
+
+        let canvas = document.getElementById("DemoCanvas");
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#fa4b2a';
+        ctx.fillRect(10, 10, width, length)
+
+        document.getElementById("chuVi").innerHTML = "Chu vi hình chữ nhật là: "+ myRectangle.getPerimeter();
+        document.getElementById("dienTich").innerHTML = "Diện tích hình chữ nhật là: "+ myRectangle.getArea();
+
+
+    </script>
+</body>
+
+</html>

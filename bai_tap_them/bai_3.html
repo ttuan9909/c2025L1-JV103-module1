@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        function kiemTraSapXepTangDan() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (i = 0; i < n; i++) {
+                input = prompt(`Nhập phần tử thứ ${i + 1}: `);
+                arr.push(input);
+            }
+            document.getElementById("result").innerHTML = arr;
+
+            let isIncreasing = true;
+            let isDecreasing = true;
+
+            for (i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    isIncreasing = false; 
+                }  
+                if (arr[i] < arr[i + 1]){
+                    isDecreasing = false;
+                } 
+            }
+
+            if (isIncreasing){
+                document.getElementById("result2").innerHTML = "Mảng tăng dần";
+            } else if (isDecreasing){
+                document.getElementById("result2").innerHTML = "Mảng giảm dần";
+            } else {
+                document.getElementById("result2").innerHTML = "Mảng không sắp xếp";
+            }
+        }
+        kiemTraSapXepTangDan()
+    </script>
+
+</body>
+
+</html>

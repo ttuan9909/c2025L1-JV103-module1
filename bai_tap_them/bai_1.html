@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="result"></p>
+    <script>
+        function themPhanTuMang() {
+            let arr = [];
+
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (i = 0; i < n; i++) {
+                let phanTu = prompt(`Nhập phần tử thứ ${i + 1}`);
+                arr.push(phanTu);
+            }
+            // document.getElementById("result").innerHTML = "Phần tử của mảng là " + arr;
+
+            if (n % 2 === 0){
+                alert("Mảng vùa nhập là" + arr +" . "+ "OK");
+            } else {
+                alert("NO");
+            }
+        }
+        themPhanTuMang();
+    </script>
+</body>
+
+</html>

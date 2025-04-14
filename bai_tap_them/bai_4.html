@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkString(string){
+            let count = 0;
+            for(i = 0; i < string.length; i++){
+                if (string[i] == string[i].toUpperCase()){
+                    count++;
+                }
+            }
+            if (count === (string.length/2)){
+                alert("OK");
+                return true;
+            } else {
+                alert("NO");
+                return false;
+            }
+        }
+        checkString("HeLloo");
+    </script>
+</body>
+</html>
