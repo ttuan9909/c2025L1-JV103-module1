@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Hàm chuẩn hóa chuỗi
+        function chuanHoaXau(xau) {
+            // Loại bỏ khoảng trắng dư và chuẩn hóa khoảng cách
+            let words = xau.trim().toLowerCase().split(/\s+/);
+
+            // Viết hoa chữ cái đầu mỗi từ
+            let chuanHoa = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+
+            return chuanHoa.join(" ");
+        }
+
+        // Hàm tìm từ dài nhất
+        function timTuDaiNhat(xau) {
+            let words = xau.trim().split(/\s+/);
+            let tuDaiNhat = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (words[i].length > tuDaiNhat.length) {
+                    tuDaiNhat = words[i];
+                }
+            }
+
+            return tuDaiNhat;
+        }
+
+        // Hàm main
+        function main() {
+            let xau = prompt("Nhập xâu ký tự:");
+
+            alert(" Trước khi chuẩn hóa:", xau);
+
+            let xauChuan = chuanHoaXau(xau);
+            alert(" Sau khi chuẩn hóa:", xauChuan);
+
+            let tuDaiNhat = timTuDaiNhat(xauChuan);
+            alert(" Từ dài nhất:", tuDaiNhat);
+        }
+
+        main();
+    </script>
+    
+</body>
+</html>

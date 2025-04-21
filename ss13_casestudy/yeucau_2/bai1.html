@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình tam giác vuông cân rỗng</title>
+</head>
+<body>
+    <p id="ketqua"></p>
+    <script>
+        function veTamGiacVuongCanRong(h){
+
+            let ketqua = "";
+            for(let i = 1; i <= h; i++ ){
+                for (let j = 1; j <= i; j++){
+                    if(j === 1 || j === i || i === h){
+                        ketqua += "*";
+                    } else {
+                        ketqua += "&nbsp;&nbsp;";
+                    }
+                }
+                ketqua += "<br>";
+            }
+            document.getElementById("ketqua").innerHTML = ketqua;
+        }
+        veTamGiacVuongCanRong(5);
+
+    </script>
+    
+</body>
+</html>

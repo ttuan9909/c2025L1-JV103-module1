@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra nguyên âm</title>
+</head>
+<body>
+    <input type="text" id="kitu" placeholder="Nhập kí tự bạn muốn kiểm tra">
+    <button onclick="kiemTraNguyenAm()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTraNguyenAm(){
+            let kiTu = document.getElementById("kitu").value.toLowerCase();
+            let result;
+            if (kiTu === "o" || kiTu === "u" || kiTu === "e" || kiTu === "a" || kiTu === "i"){
+                result = "Kí tự bạn nhập là Nguyên âm";
+            } else {
+                result = "Kí tự bạn nhập là phụ âm";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

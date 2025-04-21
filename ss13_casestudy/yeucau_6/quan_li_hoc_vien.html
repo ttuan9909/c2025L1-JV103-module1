@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí học viên</title>
+</head>
+
+<body>
+
+    <h2>Student List</h2>
+
+    <button onclick="addStudent()">Thêm học viên</button>
+    <button onclick="editStudent()">Sửa thông tin học viên</button>
+    <button onclick="deleteStudent()">Xóa học viên</button>
+    <p id="display"></p>
+    <script>
+
+        class Student {
+            constructor(id, name, nameClass, email, birthday, module) {
+                this.id = id;
+                this.name = name;
+                this.nameClass = nameClass;
+                this.email = email;
+                this.birthday = birthday;
+                this.module = module;
+            }
+        }
+
+        let studentList = [
+            new Student("HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "01/01/2004", 1),
+            new Student("HV-0002", "Nguyễn Văn B", "C1122G1", "nguyenvanb@gmail.com", "02/02/2005", 1),
+            new Student("HV-0003", "Nguyễn Thị C", "C1222G1", "nguyenthic@gmail.com", "03/03/2004", 1)
+        ];
+        display();
+
+        function display() {
+            let tableString = `<table border="1" style="border-collapse:  collapse">
+                                <tr>
+                                    <th>Mã học viên</th>
+                                    <th>Tên</th>
+                                    <th>Lớp</th>
+                                    <th>Email</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Module</th>
+                                </tr>`;
+            for (let i = 0; i < studentList.length; i++) {
+                tableString += `    <tr>
+                                    <td>${studentList[i].id}</td>
+                                    <td>${studentList[i].name}</td>
+                                    <td>${studentList[i].nameClass}</td>
+                                    <td>${studentList[i].email}</td>
+                                    <td>${studentList[i].birthday}</td>
+                                    <td>${studentList[i].module}</td>
+                                </tr>`;
+            }
+            document.getElementById("display").innerHTML = tableString;
+        }
+
+        function addStudent() {
+            let id = prompt("Nhập mã học viên (định dạng HV-XXXX):");
+
+            let validFormat = /^HV-\d{4}$/.test(id);
+
+            let isDuplicate = studentList.some(student => student.id === id);
+
+            if (!validFormat) {
+                alert(" Mã học viên không đúng định dạng (HV-XXXX).");
+                return; 
+            }
+
+            if (isDuplicate) {
+                alert(" Mã học viên đã tồn tại.");
+                return;
+            }
+            let name = prompt("Nhập tên học viên:");
+    if (name.length > 50) {
+        alert(" Tên học viên không được vượt quá 50 ký tự.");
+        return;
+    }
+            let nameClass = prompt("Nhập lớp của học viên");
+            let email = prompt("Nhập lớp của học viên");
+            let birthday = prompt("Nhập ngày sinh của học viên");
+            let module = prompt("Nhập module của học viên");
+            let newStudent = new Student(id, name, nameClass, email, birthday, module);
+            studentList.push(newStudent);
+
+            display();
+        }
+
+        function editStudent() {
+            let maHV = prompt("Nhập mã học viên cần sửa:");
+
+            for (let i = 0; i < studentList.length; i++) {
+                if (maHV == studentList[i].id) {
+                    studentList[i].name = prompt("Nhập tên mới:", studentList[i].name);
+                    studentList[i].nameClass = prompt("Nhập lớp mới:", studentList[i].nameClass);
+                    studentList[i].email = prompt("Nhập email mới:", studentList[i].email);
+                    studentList[i].birthday = prompt("Nhập ngày sinh mới:", studentList[i].birthday);
+                    studentList[i].module = prompt("Nhập Module mới:", studentList[i].module);
+
+                    display();
+                } else {
+                    alert("Mã học viên không tồn tại")
+                }
+
+                display();
+            }
+        }
+
+        function deleteStudent() {
+            let maHV = prompt("Nhập mã học viên cần xóa:");
+            let conf = confirm("bạn có muốn xoá sinh viên này không");
+            if (conf) {
+                for (let i = 0; i < studentList.length; i++) {
+                    if (studentList[i].id == maHV) {
+                        studentList.splice(i, 1);
+                        break;
+                    } else {
+                        alert("Mã học viên không tồn tại")
+                    }
+                }
+            }
+            display();
+        }
+
+    </script>
+
+</body>
+
+</html>

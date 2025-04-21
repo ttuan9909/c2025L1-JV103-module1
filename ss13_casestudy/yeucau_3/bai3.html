@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function maxFraction(arr1, arr2) {
+            let index = 0;
+            let max = arr1[0] / arr2[0];
+
+            for (let i = 1; i < arr1.length; i++) {
+                let value = arr1[i] / arr2[i];
+                if (value > max) {
+                    max = value;
+                    index = i;
+                }
+            }
+
+            console.log(max,index);
+            
+        }
+        maxFraction([5, 2, 5],[6, 3, 4])
+    </script>
+
+</body>
+
+</html>

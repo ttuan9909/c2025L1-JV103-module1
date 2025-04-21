@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Max, min của mảng 2 chiều</title>
+</head>
+
+<body>
+    <script>
+        function timMaxMinMangHaiChieu() {
+            let m = parseInt(prompt("Nhập số dòng m của ma trận:"));
+            let n = parseInt(prompt("Nhập số cột n của ma trận:"));
+
+            let arr = [];
+
+
+            for (let i = 0; i < m; i++) {
+                let row = [];
+                for (let j = 0; j < n; j++) {
+                    let value = parseInt(prompt(`Nhập phần tử cho ma trận tại vị trí [${i}][${j}]:`));
+                    row.push(value);
+                }
+                arr.push(row);
+            }
+
+            let min = arr[0][0];
+            let max = arr[0][0];
+            for (let i = 0; i < m; i++) {
+                for (let j = 0; j < n; j++) {
+                    if (arr[i][j] < min) {
+                        min = arr[i][j];
+                    }
+                    if (arr[i][j] > max) {
+                        max = arr[i][j];
+                    }
+                }
+            }
+            alert(`Giá trị lớn nhất là ${max} và giá trị nhỏ nhất là ${min}`);
+
+        }
+        timMaxMinMangHaiChieu();
+        
+    </script>
+
+</body>
+
+</html>

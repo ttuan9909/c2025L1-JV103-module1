@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function tinhTongMaTran() {
+            let m = parseInt(prompt("Nhập số dòng m của ma trận:"));
+            let n = parseInt(prompt("Nhập số cột n của ma trận:"));
+
+            let arr = [];
+
+            
+            for (let i = 0; i < m; i++) {
+                let row = []; 
+                for (let j = 0; j < n; j++) {
+                    let value = parseInt(prompt(`Nhập phần tử cho ma trận tại vị trí [${i}][${j}]:`));
+                    row.push(value); 
+                }
+                arr.push(row); 
+            }
+
+
+
+            let tong = 0;
+
+
+            for (let i = 0; i < m; i++) {
+                for (let j = 0; j < n; j++) {
+                    if (arr[i][j] % 2 === 0) {
+                        tong += arr[i][j];
+                    }
+                }
+            }
+            alert("Tổng các phần tử chẵn trong ma trận là: "+tong);
+        }
+        tinhTongMaTran();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế thu nhập</title>
+</head>
+<body>
+    <input type="number" id="luong" placeholder="Nhập tiền lương của bạn">
+    <button onclick="tinhThueThuNhap()">Kiểm tra</button>
+    <p id="thue"></p>
+    <p id="luongThucTe"></p>
+    <script>
+        function tinhThueThuNhap(){
+            let luong = document.getElementById("luong").value;
+            let thue, luongThucTe;
+            if (luong >= 15000000 ){
+                thue = luong*20/100
+                luongThucTe = luong - thue;
+            } else if (luong >= 7000000){
+                thue = luong*10/100
+                luongThucTe = luong - thue;
+            } else {
+                thue = luong*5/100
+                luongThucTe = luong - thue;
+            }
+            document.getElementById("thue").innerHTML = "Thuế của bạn phải đóng là: "+thue;
+            document.getElementById("luongThucTe").innerHTML = "Lương thực tế bạn nhận được là: "+ luongThucTe;
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function quanLiNuoc() {
+            let tongTien = 0;
+            let nuoc, soLuong, result;
+
+            do {
+                nuoc = parseInt(prompt(
+                    "Chọn nước uống bạn muốn: \n" +
+                    "1. Cafe \n" +
+                    "2. Cam vắt \n" +
+                    "3. Nước ép cà rốt \n" +
+                    "4. Nước ép cà chua \n" +
+                    "5. Nước lọc \n" +
+                    "6. Nước dừa \n" +
+                    "7. Thanh toán"
+                ));
+
+                switch (nuoc) {
+                    case 1:
+                        soLuong = parseInt(prompt("Cafe: 15k\nChọn số lượng: "));
+                        tongTien += soLuong * 15;
+                        break;
+                    case 2:
+                        soLuong = parseInt(prompt("Cam vắt: 25k\nChọn số lượng: "));
+                        tongTien += soLuong * 25;
+                        break;
+                    case 3:
+                        soLuong = parseInt(prompt("Nước ép cà rốt: 25k\nChọn số lượng: "));
+                        tongTien += soLuong * 25;
+                        break;
+                    case 4:
+                        soLuong = parseInt(prompt("Nước ép cà chua: 25k\nChọn số lượng: "));
+                        tongTien += soLuong * 25;
+                        break;
+                    case 5:
+                        soLuong = parseInt(prompt("Nước lọc: 10k\nChọn số lượng: "));
+                        tongTien += soLuong * 10;
+                        break;
+                    case 6:
+                        soLuong = parseInt(prompt("Nước dừa: 20k\nChọn số lượng: "));
+                        tongTien += soLuong * 20;
+                        break;
+                    case 7:
+                        alert("Tổng tiền bạn cần thanh toán là: " + tongTien + "k");
+                        break;
+                    default:
+                        alert("Vui lòng chọn từ 1 đến 7!");
+                }
+
+            } while (nuoc !== 7);
+        }
+        quanLiNuoc();
+    </script>
+
+</body>
+
+</html>
