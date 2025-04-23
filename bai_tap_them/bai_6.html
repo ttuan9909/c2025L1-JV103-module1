@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiểm tra chuỗi</title>
+</head>
+<body>
+    <script>
+        function kiemTraChuoi(str){
+            string = str.split('');
+            let arr = [];
+            let char;
+            for(let i = 0; i< string.length; i++){
+                char = string[i].toLowerCase();
+                if (char == "u" || char == "e" || char == "o" || char == "a" || char == "i"){
+                     arr.push(char);
+                }
+            }
+            console.log(arr);
+        }
+        kiemTraChuoi("ue oai");
+    </script>
+    
+</body>
+</html>

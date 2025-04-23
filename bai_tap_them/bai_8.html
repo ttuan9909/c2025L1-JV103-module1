@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số lần lặp lại</title>
+</head>
+
+<body>
+    <script>
+        function countMaxOccurrence() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (let i = 0; i < n; i++) {
+                input = prompt(`Nhập phần tử thứ ${i + 1}: `);
+                arr.push(input);
+            }
+
+            let max = arr[0];
+            let count = 1;       
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]; 
+                    count = 1; 
+                } else if (arr[i] === max) {
+                    count++; 
+                }
+            }
+
+            alert(count);
+        }
+        countMaxOccurrence()
+    </script>
+
+</body>
+
+</html>

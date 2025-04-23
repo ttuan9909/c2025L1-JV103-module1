@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số chính phương</title>
+</head>
+
+<body>
+    <script>
+        function soChinhPhuong() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (let i = 0; i < n; i++) {
+                input = prompt(`Nhập phần tử thứ ${i + 1}: `);
+                arr.push(input);
+            }
+
+            let soChinhPhuong = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                let can = Math.sqrt(arr[i]);
+                if (Number.isInteger(can)) {
+                    soChinhPhuong.push(arr[i]);
+                }
+            }
+
+            alert(soChinhPhuong);
+        }
+        soChinhPhuong();
+    </script>
+
+</body>
+
+</html>

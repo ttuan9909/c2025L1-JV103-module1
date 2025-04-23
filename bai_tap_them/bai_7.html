@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTraSo() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (let i = 0; i < n; i++) {
+                input = prompt(`Nhập phần tử thứ ${i + 1} ( phần tử lớn hơn 10 và nhỏ hơn 100): `);
+                arr.push(input);
+            }
+
+            let result = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                let num = arr[i];
+                let donVi = num % 10;
+                let chuc = Math.floor(num / 10);
+
+                if (donVi > chuc) {
+                    result.push(num);
+                }
+            }
+            alert(result);
+        }
+        kiemTraSo();
+
+    </script>
+</body>
+
+</html>

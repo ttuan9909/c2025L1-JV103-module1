@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung bình cộng</title>
+</head>
+<body>
+    <script>
+        function trungBinhCong(){
+            let sum = 0;
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (let i = 0; i < n; i++) {
+                input = parseFloat(prompt(`Nhập phần tử thứ ${i + 1}: `));
+                arr.push(input);
+                sum += input;
+            }
+
+            let avg = sum/n;
+            let count = 0;
+            for (let i = 0; i< n; i ++){
+                if (Math.abs(arr[i] - avg) < 0.0001){
+                    count++;
+                }
+            }
+            
+            alert(count);
+        }
+        trungBinhCong();
+    </script>
+    
+</body>
+</html>

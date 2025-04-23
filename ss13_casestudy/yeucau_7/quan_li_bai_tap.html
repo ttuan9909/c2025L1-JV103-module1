@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống bài tập</title>
+
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        background: #f0f0f0;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+        font-size: 50px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-left: 500px;
+
+    }
+
+    .main {
+        display: flex;
+        height: calc(100vh - 60px);
+        
+    }
+
+    .sidebar {
+        width: 180px;
+        background: #fff;
+        border-right: 2px solid black;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content {
+        flex: 1;
+        background: #fefefe;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">G</div>
+        <h1>Hệ thống quản lý bài tập Casestudy module 1</h1>
+    </header>
+
+    <div class="main">
+        <aside class="sidebar">
+            <select>
+                <option>Bài tập 1</option>
+            </select>
+            <select>
+                <option>Bài tập 2</option>
+            </select>
+            <select>
+                <option>Bài tập 3</option>
+            </select>
+            <select>
+                <option>Bài tập 4</option>
+            </select>
+            <select>
+                <option>Bài tập 5</option>
+            </select>
+        </aside>
+
+        <section class="content">
+
+        </section>
+    </div>
+</body>
+
+</html>
