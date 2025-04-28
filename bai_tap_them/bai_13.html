@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTraMangNguyenTo() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            for (let i = 0; i < n; i++) {
+                input = prompt(`Nhập phần tử thứ ${i + 1}: `);
+                arr.push(input);
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (!isPrime(arr[i])) {
+                    console.log("NO");
+                }
+            }
+            alert("OK");
+        }
+
+        function isPrime(num) {
+            if (num <= 1) return false; // Số nhỏ hơn hoặc bằng 1 không phải số nguyên tố
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false; // Nếu chia hết cho i thì không phải số nguyên tố
+            }
+            return true;
+        }
+        kiemTraMangNguyenTo();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkString(str) {
+            let result = [];
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                if (!(/[a-zA-Z0-9]/.test(char))) {
+                    result.push(char);
+                }
+            }
+            console.log(result);
+        }
+        checkString("@123anhuan!????");
+    </script>
+</body>
+
+</html>

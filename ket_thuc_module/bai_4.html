@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí khách sạn</title>
+</head>
+<style>
+    th,td {
+        height: auto;
+        width: 120px;
+    }
+    input {
+        margin-top: 10px;
+    }
+    button {
+        margin-top: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        text-align: left;
+        padding: 12px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    td,th {
+        border: 1px solid #ddd;
+    }
+
+    table,th,td {
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    button:active {
+        background-color: #397d3a;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<body>
+    <input type="text"  id="id" placeholder="Nhập mã khách hàng">
+    <br>
+    <input type="text"  id="name" placeholder="Nhập tên khách hàng">
+    <br>
+    <input type="number"  id="phone" placeholder="Nhập số điện thoại">
+    <br>
+    <input type="text"  id="address" placeholder="Nhập địa chỉ khách hàng">
+    <br>
+    <input type="text"  id="email" placeholder="Nhập email khách hàng">
+    <br>
+    <button onclick="add()">Thêm khách hàng</button>
+    <p id="display"></p>
+    <script>
+        class Customer {
+            constructor(id, name, phone, address, email){
+                this.id = id;
+                this.name = name;
+                this.phone = phone;
+                this.address = address;
+                this.email = email
+            }
+        }
+        let customerList = [new Customer("KH0001","Nguyễn Văn A","0123456789", "Ngũ Hành Sơn, Đà Nẵng", "NguyenVanA1@gmail.com")];
+
+        display();
+
+        function display() {
+            let tableString = `<table border="1" style="border-collapse:  collapse">
+                                <tr>
+                                    <th>Mã Khách Hàng</th>
+                                    <th>Tên</th>
+                                    <th>Số Điện Thoại</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Email</th>                                
+                                </tr>`;
+            for (let i = 0; i < customerList.length; i++) {
+                tableString += `    <tr>
+                                    <td>${customerList[i].id}</td>
+                                    <td>${customerList[i].name}</td>
+                                    <td>${customerList[i].phone}</td>
+                                    <td>${customerList[i].address}</td>
+                                    <td>${customerList[i].email}</td>
+                                </tr>`;
+            }
+            document.getElementById("display").innerHTML = tableString;
+        }
+        
+
+        function add() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let email = document.getElementById("email").value;
+
+
+        if (id!=""&&name!=""&&phone!=""&&address!=""&&email!=""){
+            let newCustomer = new Customer(id, name, phone, address, email);
+            customerList.push(newCustomer);
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("address").value = "";
+        }else {
+            alert("thông tin chưa nhập đủ")
+        }
+
+        display();
+
+    }
+
+    </script>
+    
+</body>
+</html>

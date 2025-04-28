@@ -5,6 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lí học viên</title>
 </head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+    }
+
+
+    table,
+    th,
+    td {
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        text-align: left;
+        padding: 12px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    td,
+    th {
+        border: 1px solid #ddd;
+    }
+
+    table,
+    th,
+    td {
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    button:active {
+        background-color: #397d3a;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+</style>
 
 <body>
 
@@ -43,6 +115,7 @@
                                     <th>Email</th>
                                     <th>Ngày sinh</th>
                                     <th>Module</th>
+                                    
                                 </tr>`;
             for (let i = 0; i < studentList.length; i++) {
                 tableString += `    <tr>
@@ -59,6 +132,8 @@
 
         function addStudent() {
             let id = prompt("Nhập mã học viên (định dạng HV-XXXX):");
+            // Kiểm tra nếu người dùng chọn "Cancel"
+            if (id === null) return; // Nếu "Cancel", thoát hàm
 
             let validFormat = /^HV-\d{4}$/.test(id);
 
@@ -66,7 +141,7 @@
 
             if (!validFormat) {
                 alert(" Mã học viên không đúng định dạng (HV-XXXX).");
-                return; 
+                return;
             }
 
             if (isDuplicate) {
@@ -74,10 +149,10 @@
                 return;
             }
             let name = prompt("Nhập tên học viên:");
-    if (name.length > 50) {
-        alert(" Tên học viên không được vượt quá 50 ký tự.");
-        return;
-    }
+            if (name.length > 50) {
+                alert(" Tên học viên không được vượt quá 50 ký tự.");
+                return;
+            }
             let nameClass = prompt("Nhập lớp của học viên");
             let email = prompt("Nhập lớp của học viên");
             let birthday = prompt("Nhập ngày sinh của học viên");
@@ -91,38 +166,53 @@
         function editStudent() {
             let maHV = prompt("Nhập mã học viên cần sửa:");
 
+            // Kiểm tra nếu người dùng chọn "Cancel"
+            if (maHV === null) return; // Nếu "Cancel", thoát hàm
+            let found = false;
+
             for (let i = 0; i < studentList.length; i++) {
-                if (maHV == studentList[i].id) {
+                if (maHV === studentList[i].id) {
+                    found = true;
                     studentList[i].name = prompt("Nhập tên mới:", studentList[i].name);
                     studentList[i].nameClass = prompt("Nhập lớp mới:", studentList[i].nameClass);
                     studentList[i].email = prompt("Nhập email mới:", studentList[i].email);
                     studentList[i].birthday = prompt("Nhập ngày sinh mới:", studentList[i].birthday);
                     studentList[i].module = prompt("Nhập Module mới:", studentList[i].module);
-
                     display();
-                } else {
-                    alert("Mã học viên không tồn tại")
                 }
+            }
 
-                display();
+            if (!found) {
+                alert("Mã học viên không tồn tại")
             }
         }
 
         function deleteStudent() {
             let maHV = prompt("Nhập mã học viên cần xóa:");
-            let conf = confirm("bạn có muốn xoá sinh viên này không");
+            let found = false;
+            if (maHV === null) return; // Nếu "Cancel", thoát hàm
+
+            let conf = confirm("Bạn có muốn xóa sinh viên này không?");
+
             if (conf) {
                 for (let i = 0; i < studentList.length; i++) {
-                    if (studentList[i].id == maHV) {
+                    if (studentList[i].id === maHV) {
                         studentList.splice(i, 1);
+                        found = true;
                         break;
-                    } else {
-                        alert("Mã học viên không tồn tại")
                     }
                 }
+
+                if (!found) {
+                    alert("Mã học viên không tồn tại");
+                } else {
+                    display();
+                }
+            } else {
+                alert("Hủy bỏ xóa học viên.");
             }
-            display();
         }
+
 
     </script>
 

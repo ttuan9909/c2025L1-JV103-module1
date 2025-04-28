@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function tongBoiCua3Va5() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng ( Không quá 20 phần tử): "));
+            let sum = 0;
+
+            if (n > 20) {
+                alert("Quá 20 phần tử");
+                return false;
+            }
+
+            for (let i = 0; i < n; i++) {
+                input = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+                arr.push(input);
+            }
+
+            alert("Các phần tử trong mảng là: " + arr);
+
+            for (i = 0; i < n; i++) {
+                if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
+                    sum += arr[i];
+                }
+            }
+
+            alert("Tổng các bội chung của 3 và 5 trong mảng là: " + sum);
+        }
+        tongBoiCua3Va5();
+    </script>
+
+</body>
+
+</html>

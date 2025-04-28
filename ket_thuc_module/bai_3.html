@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function demCapSoTongChiaHetk() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng ( Không quá 50 phần tử): "));
+            let k = parseInt(prompt("Nhập số k: "));
+            if (n >= 50) {
+                alert("Quá 50 phần tử");
+                return false;
+            }
+
+            for (let i = 0; i < n; i++) {
+                input = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+                arr.push(input);
+            }
+
+            for (let i = 0; i < n; i++) {
+                for (j = i + 1; j < n; j++) {
+                    if ((arr[i] + arr[j]) % k === 0) {
+                        console.log(arr[i], arr[j])
+                    }
+                }
+            }
+        }
+        demCapSoTongChiaHetk();
+    </script>
+</body>
+
+</html>

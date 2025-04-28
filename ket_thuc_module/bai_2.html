@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function lamTronDiem(diem) {
+            if (diem > 100 || diem < 0) {
+                return false;
+            }
+
+            if (diem > 50) {
+                if (diem % 5 === 3) {
+                    diem += 2;
+                    console.log("Bạn đã đạt và điểm của bạn là: " + diem);
+                } else if (diem % 5 === 4) {
+                    diem += 1;
+                    console.log("Bạn đã đạt và điểm của bạn là: " + diem);
+                } else {
+                    console.log("Bạn đã đạt và điểm của bạn là: " + diem);
+                }
+            } else {
+                console.log("Bạn đã trượt và điểm của bạn là: " + diem)
+            }
+        }
+        lamTronDiem(44);
+    </script>
+
+</body>
+
+</html>

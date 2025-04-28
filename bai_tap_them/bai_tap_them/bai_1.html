@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTraCanhTamGiac() {
+            arr = [];
+            let n = parseInt(prompt("Nhập số phần tử mảng: "));
+
+            while (n % 3 !== 0) {
+                alert("Số phần tử mảng phải là bội số của 3. Vui lòng nhập lại.");
+                n = parseInt(prompt("Nhập số phần tử mảng: "));
+            }
+
+            for (let i = 0; i < n; i++) {
+                input = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+                arr.push(input);
+            }
+
+            for (let i = 0; i < arr.length - 2; i++) {
+                let a = arr[i];
+                let b = arr[i + 1];
+                let c = arr[i + 2];
+
+                
+                if (
+                    (a * a + b * b === c * c) ||
+                    (a * a + c * c === b * b) ||
+                    (b * b + c * c === a * a)
+                ) {
+                    alert("OK");
+                    return;
+                } else {
+                    alert("NO")
+                }
+            }
+
+            
+
+        }
+        kiemTraCanhTamGiac()
+    </script>
+</body>
+
+</html>

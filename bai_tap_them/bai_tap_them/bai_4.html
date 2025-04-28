@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="display"></p>
+    <script>
+        class DanhBa {
+            constructor(phone, name, address) {
+                this.phone = phone;
+                this.name = name;
+                this.address = address;
+            }
+        }
+
+        let phoneList = [
+            new DanhBa("0335024355", "Tôn Thất Anh Tuấn", "Đà Nẵng"),
+            new DanhBa("0123456789", "Nguyễn Văn A", "Quảng Trị"),
+            new DanhBa("1234678999", "Nguyễn Văn B", "Quảng Bình")
+        ];
+        display();
+
+        function display() {
+            let tableString = `<table border="1" style="border-collapse:  collapse">
+                                <tr>
+                                    <th>Số điện thoại</th>
+                                    <th>Tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Xóa</th>
+                                </tr>`;
+            for (let i = 0; i < phoneList.length; i++) {
+                tableString += `    <tr>
+                                    <td>${phoneList[i].phone}</td>
+                                    <td>${phoneList[i].name}</td>
+                                    <td>${phoneList[i].address}</td>
+                                    <td><button onclick="deletePhone(${phoneList[i].phone})">Xóa</button></td>
+                                </tr>`;
+            }
+            document.getElementById("display").innerHTML = tableString;
+        }
+        function deletePhone(phone) {
+        let conf = confirm("bạn có muốn xoá sinh viên này không");
+        if (conf) {
+            // for (let i = 0; i < phoneList.length; i++) {
+            //     if (phoneList[i].phone == phone) {
+            //         phoneList.splice(i, 1);
+            //         break;
+            //     }
+            // }
+            for (let i = phoneList.length -1; i >=0; i--) {
+                if (phoneList[i].phone == phone) {
+                    phoneList.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        display();
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function taoCumTuVietTat(str) {
+
+            let words = str.trim().split(/\s+/);
+            if (words.length < 2) {
+                alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+            }
+
+            let vietTat = '';
+            for (let i = 0; i < words.length; i++) {
+                vietTat += words[i].charAt(0).toUpperCase();
+            }
+
+            alert(vietTat);
+        }
+        taoCumTuVietTat("Ton That Anh Tuan");
+    </script>
+
+</body>
+
+</html>

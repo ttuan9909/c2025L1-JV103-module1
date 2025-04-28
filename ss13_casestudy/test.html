@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add() {
+            let id = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+
+            if (id != "" && name != "" && age != "" && address != "") {
+                let newStudent = new Student(id, name, age, address);
+                studentList.push(newStudent);
+                document.getElementById("id").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("age").value = "";
+                document.getElementById("address").value = "";
+            } else {
+                alert("thông tin chưa nhập đủ")
+            }
+
+            display();
+
+            arr = [1, 2, 3, 4, 5, 6]
+            k = 5
+            n = 6
+            count = 0
+
+            i = 0
+            while i < n:
+                j = i + 1
+            while j < n:
+                if (arr[i] + arr[j]) % k == 0:
+            count += 1
+            j += 1
+            i += 1
+
+            print(count)
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
